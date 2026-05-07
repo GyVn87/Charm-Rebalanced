@@ -34,7 +34,7 @@ namespace TuyenTuyenTuyen.Charms {
         /// override IntSwitch.OnEnter() method of state "Blocker Hit" of FSM Blocker Shield
         /// </summary>
         internal static void OnIntSwitch_OnEnter(On.HutongGames.PlayMaker.Actions.IntSwitch.orig_OnEnter orig, HutongGames.PlayMaker.Actions.IntSwitch self) {
-            if (self.Owner.name != "Blocker Shield") {
+            if (self.State.Name != "Blocker Hit") {
                 orig(self);
                 return;
             }
@@ -49,11 +49,11 @@ namespace TuyenTuyenTuyen.Charms {
         }
 
         internal static void OnWait_OnEnter(On.HutongGames.PlayMaker.Actions.Wait.orig_OnEnter orig, HutongGames.PlayMaker.Actions.Wait self) {
-            if (self.Owner.name != "Blocker Shield") {
+            if (self.State.Name != "Icon Pause") {
                 orig(self);
                 return;
             }
-            // placeholder //
+            CharmRebalanced.LoadedInstance.PD.SetInt("blockerHits", newBlockerHits);
             orig(self);
         }
     }

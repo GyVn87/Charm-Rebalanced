@@ -46,7 +46,7 @@ namespace TuyenTuyenTuyen {
         }
 
 		private HitInstance HitInstanceHandler(Fsm owner, HitInstance hit) {
-			// this.Log(hit.DamageDealt);
+			// this.Log(hit.DamageDealt); // debug
 			return hit;
 		}
     }
