@@ -4,7 +4,8 @@ namespace TuyenTuyenTuyen.Charms {
     internal static class NewCharmCosts {
         internal static Dictionary<string, int> charmCosts = new Dictionary<string, int>() {
             {"charmCost_21", 3},
-            {"charmCost_29", 3}
+            {"charmCost_29", 3},
+            {"charmCost_34", 3}
         };
 
     internal static int OnGetInt(string name, int orig) {

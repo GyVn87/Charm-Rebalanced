@@ -28,6 +28,7 @@ namespace TuyenTuyenTuyen {
 			ModHooks.SoulGainHook += Charm20_SoulCatcher.OnSoulGain;
             ModHooks.SoulGainHook += Charm21_SoulEater.OnSoulGain;
             ModHooks.HeroUpdateHook += Charm29_Hiveblood.OnHeroUpdate;
+			On.HutongGames.PlayMaker.Actions.FloatMultiply.OnEnter += Charm34_DeepFocus.OnFloatMutiply_OnEnter;
             ModHooks.GetPlayerIntHook += NewCharmCosts.OnGetInt;
         }
 
@@ -42,6 +43,7 @@ namespace TuyenTuyenTuyen {
 			ModHooks.SoulGainHook -= Charm20_SoulCatcher.OnSoulGain;
             ModHooks.SoulGainHook -= Charm21_SoulEater.OnSoulGain;
             ModHooks.HeroUpdateHook -= Charm29_Hiveblood.OnHeroUpdate;
+            On.HutongGames.PlayMaker.Actions.FloatMultiply.OnEnter -= Charm34_DeepFocus.OnFloatMutiply_OnEnter;
             ModHooks.GetPlayerIntHook -= NewCharmCosts.OnGetInt;
         }
     }

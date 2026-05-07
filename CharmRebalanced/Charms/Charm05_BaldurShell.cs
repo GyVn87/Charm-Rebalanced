@@ -11,6 +11,8 @@ namespace TuyenTuyenTuyen.Charms {
 
         internal static int OnBeforeAddHealth(int amount) {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;
+            if (!PD.GetBool("equippedCharm_5"))
+                return amount;
             if (PD.blockerHits == newBlockerHits)
                 return amount;
             if (PD.GetInt("health") >= PD.CurrentMaxHealth) {
