@@ -26,6 +26,8 @@ namespace TuyenTuyenTuyen {
 			On.HutongGames.PlayMaker.Actions.SetMeshRenderer.OnEnter += Charm05_BaldurShell.OnSetMeshRenderer_OnEnter;
 			ModHooks.BeforeAddHealthHook += Charm05_BaldurShell.OnBeforeAddHealth;
 			ModHooks.SoulGainHook += Charm20_SoulCatcher.OnSoulGain;
+            ModHooks.SoulGainHook += Charm21_SoulEater.OnSoulGain;
+            ModHooks.HeroUpdateHook += Charm29_Hiveblood.OnHeroUpdate;
             ModHooks.GetPlayerIntHook += NewCharmCosts.OnGetInt;
         }
 
@@ -38,6 +40,8 @@ namespace TuyenTuyenTuyen {
             On.HutongGames.PlayMaker.Actions.SetMeshRenderer.OnEnter -= Charm05_BaldurShell.OnSetMeshRenderer_OnEnter;
             ModHooks.BeforeAddHealthHook -= Charm05_BaldurShell.OnBeforeAddHealth;
 			ModHooks.SoulGainHook -= Charm20_SoulCatcher.OnSoulGain;
+            ModHooks.SoulGainHook -= Charm21_SoulEater.OnSoulGain;
+            ModHooks.HeroUpdateHook -= Charm29_Hiveblood.OnHeroUpdate;
             ModHooks.GetPlayerIntHook -= NewCharmCosts.OnGetInt;
         }
     }

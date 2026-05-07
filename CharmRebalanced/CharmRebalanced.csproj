@@ -66,6 +66,7 @@
     <Compile Include="Charms\Charm20_SoulCatcher.cs" />
     <Compile Include="Charms\Charm21_SoulEater.cs" />
     <Compile Include="Charms\Charm03_GrubSong.cs" />
+    <Compile Include="Charms\Charm29_Hiveblood.cs" />
     <Compile Include="Charms\NewCharmCosts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
