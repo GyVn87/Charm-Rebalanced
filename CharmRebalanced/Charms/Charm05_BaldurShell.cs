@@ -13,16 +13,16 @@ namespace TuyenTuyenTuyen.Charms {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;
             if (PD.blockerHits == newBlockerHits)
                 return amount;
-            if (PD.GetInt("health") == PD.CurrentMaxHealth) {
+            if (PD.GetInt("health") >= PD.CurrentMaxHealth) {
                 GameObject Knight = CharmRebalanced.LoadedInstance.Knight;
                 PlayMakerFSM FSM = Knight.transform.Find("Charm Effects").Find("Blocker Shield").GetComponent<PlayMakerFSM>();
                 if (PD.blockerHits + amount >= newBlockerHits) {
                     FSM.Fsm.SetState("HUD Icon Up");
                     FSM.Fsm.SetState("Focus End");
-                    PD.blockerHits = Math.Min(newBlockerHits, PD.blockerHits + amount);
+                    CharmRebalanced.LoadedInstance.PD.SetInt("blockerHits", Math.Min(newBlockerHits, PD.blockerHits + amount));
                 }
                 else {
-                    PD.blockerHits = Math.Min(newBlockerHits, PD.blockerHits + amount);
+                    CharmRebalanced.LoadedInstance.PD.SetInt("blockerHits", Math.Min(newBlockerHits, PD.blockerHits + amount));
                     PD.blockerHits++; // Since blockerHits will be decremented by 1 in "Blocker Hit" state, so this line will be netraulized
                     FSM.Fsm.SetState("Blocker Hit");
                 }
@@ -48,8 +48,8 @@ namespace TuyenTuyenTuyen.Charms {
                 self.Fsm.Event("1"); // STAGE 3
         }
 
-        internal static void OnWait_OnEnter(On.HutongGames.PlayMaker.Actions.Wait.orig_OnEnter orig, HutongGames.PlayMaker.Actions.Wait self) {
-            if (self.State.Name != "Icon Pause") {
+        internal static void OnSetMeshRenderer_OnEnter(On.HutongGames.PlayMaker.Actions.SetMeshRenderer.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SetMeshRenderer self) {
+            if (self.State.Name != "HUD Icon Up") {
                 orig(self);
                 return;
             }

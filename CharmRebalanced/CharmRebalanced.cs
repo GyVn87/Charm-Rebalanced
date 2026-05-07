@@ -20,12 +20,10 @@ namespace TuyenTuyenTuyen {
 			if (CharmRebalanced.LoadedInstance != null) return;
 			CharmRebalanced.LoadedInstance = this;
 
-			ModHooks.HitInstanceHook += HitInstanceHandler;
-
-            On.HeroController.Awake += Charm03_GrubSong.OnHCAwake;
+			On.HeroController.Awake += Charm03_GrubSong.OnHCAwake;
             ModHooks.TakeHealthHook += Charm03_GrubSong.OnTakeHealth;
 			On.HutongGames.PlayMaker.Actions.IntSwitch.OnEnter += Charm05_BaldurShell.OnIntSwitch_OnEnter;
-			On.HutongGames.PlayMaker.Actions.Wait.OnEnter += Charm05_BaldurShell.OnWait_OnEnter;
+			On.HutongGames.PlayMaker.Actions.SetMeshRenderer.OnEnter += Charm05_BaldurShell.OnSetMeshRenderer_OnEnter;
 			ModHooks.BeforeAddHealthHook += Charm05_BaldurShell.OnBeforeAddHealth;
 			ModHooks.SoulGainHook += Charm20_SoulCatcher.OnSoulGain;
             ModHooks.GetPlayerIntHook += NewCharmCosts.OnGetInt;
@@ -34,20 +32,13 @@ namespace TuyenTuyenTuyen {
 		public void Unload() {
 			CharmRebalanced.LoadedInstance = null;
 
-            ModHooks.HitInstanceHook -= HitInstanceHandler;
-
             On.HeroController.Awake -= Charm03_GrubSong.OnHCAwake;
             ModHooks.TakeHealthHook -= Charm03_GrubSong.OnTakeHealth;
             On.HutongGames.PlayMaker.Actions.IntSwitch.OnEnter -= Charm05_BaldurShell.OnIntSwitch_OnEnter;
-            On.HutongGames.PlayMaker.Actions.Wait.OnEnter -= Charm05_BaldurShell.OnWait_OnEnter;
+            On.HutongGames.PlayMaker.Actions.SetMeshRenderer.OnEnter -= Charm05_BaldurShell.OnSetMeshRenderer_OnEnter;
             ModHooks.BeforeAddHealthHook -= Charm05_BaldurShell.OnBeforeAddHealth;
 			ModHooks.SoulGainHook -= Charm20_SoulCatcher.OnSoulGain;
             ModHooks.GetPlayerIntHook -= NewCharmCosts.OnGetInt;
         }
-
-		private HitInstance HitInstanceHandler(Fsm owner, HitInstance hit) {
-			// this.Log(hit.DamageDealt); // debug
-			return hit;
-		}
     }
 }
