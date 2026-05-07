@@ -13,9 +13,13 @@ This is my first time modding Hollow Knight, there are so much to learn so the p
 * Next times, you just need to lauch Hollow Knight as usual.
 
 # Changes
+## Wayward Compass
+***NO CHANGES***
+## Gathering Swarm
+***NO CHANGES***
 ## Soul Catcher
-- Soul gain when Soul Meter is full: 2 => 3.\
-\
+- Soul gain when Soul Meter is full: 2 => 3.
+
 ***This makes Soul Catcher more viable in late game with the help of Soul Vessels without making it too strong in early game.***
 ## Soul Eater
 - Notch cost: 4 => 3.
@@ -28,11 +32,20 @@ This is my first time modding Hollow Knight, there are so much to learn so the p
 - Soul gain when having Grubberfly's Elegy: 25 => 22.
 
 ***Grubsong is a little too good for early game. So I think it is fine to nerf it a little bit. However, by scaling soul gain with damage, it remains viable in later stages, especially againsts bosses that deal more than 1 damage.***
+## Spell Twister
+***NO CHANGES***
 ## Baldur Shell
 - Can now be restored by the amount of healed masks when player heals at full masks.
 - Now caps at 6 blocker hits.
 
 ***I feel like this change would encourage a new playstyle without making it overpowered. With this, focusing in Radiant boss fights is no longer entirely useless.***
+## Quick Focus
+***NO CHANGES***
+## Deep Focus
+- Notch cost: 4 => 3.
+- Focus time increases: 65% => 50%.
+
+***It's a cool charm, but I don't see why it costs 4 notches. I have also lowered its focus time increases a little, and now when combining this charm with Quick Focus, the result is the same as normal.***
 ## Hiveblood
 - Notch cost: 4 => 3.
 - Always regenerates masks for player.
