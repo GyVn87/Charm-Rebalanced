@@ -1,7 +1,7 @@
 ﻿namespace TuyenTuyenTuyen.Charms {
     internal static class Charm03_GrubSong {
-        internal static int soulGain = 14;
-        internal static int soulGainCombo = 22;
+        private static int soulGain = 14;
+        private static int soulGainCombo = 22;
 
         internal static void OnHCAwake(On.HeroController.orig_Awake orig, HeroController self) {
             orig(self);

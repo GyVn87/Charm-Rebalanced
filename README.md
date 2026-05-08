@@ -13,10 +13,6 @@ This is my first time modding Hollow Knight, there are so much to learn so the p
 * Next times, you just need to lauch Hollow Knight as usual.
 
 # Changes
-## Wayward Compass
-***NO CHANGES***
-## Gathering Swarm
-***NO CHANGES***
 ## Soul Catcher
 - Soul gain when Soul Meter is full: 2 => 3.
 
@@ -32,20 +28,38 @@ This is my first time modding Hollow Knight, there are so much to learn so the p
 - Soul gain when having Grubberfly's Elegy: 25 => 22.
 
 ***Grubsong is a little too good for early game. So I think it is fine to nerf it a little bit. However, by scaling soul gain with damage, it remains viable in later stages, especially againsts bosses that deal more than 1 damage.***
-## Spell Twister
-***NO CHANGES***
+## Heart
+- Masks increases: 2 => 3
+
+***I do think this charm need a buff to keep up with other charms in the late game.***
+## Strength
+- Damage increases: 50% => 35%.
+- Damage increases also applies on Nail Art.
+
+***This charm certainly needs a nerf, 50% increases in damage is purely evil. Moreover, is it weird when the charm only applies on Nail, don't you think?***
 ## Baldur Shell
 - Can now be restored by the amount of healed masks when player heals at full masks.
 - Now caps at 6 blocker hits.
 
 ***I feel like this change would encourage a new playstyle without making it overpowered. With this, focusing in Radiant boss fights is no longer entirely useless.***
-## Quick Focus
-***NO CHANGES***
 ## Deep Focus
 - Notch cost: 4 => 3.
 - Focus time increases: 65% => 50%.
 
 ***It's a cool charm, but I don't see why it costs 4 notches. I have also lowered its focus time increases a little, and now when combining this charm with Quick Focus, the result is the same as normal.***
+## Liveblood Heart
+- Notch cost: 2 => 1.
+
+***Because... why not? I have never thought that 2 Liveblood Masks is worth 2 Notches***
+## Lifeblood Core
+- Liveblood Masks: 4 => 6
+
+***This exorbitant charm should have added MORE THAN FOUR LIVEBLOOD MASKS.***
+## Joni's Blessing
+- Notch cost: 4 => 2
+- Max health increases: 40% => 50%
+
+***At this point, I really wonder why all Liveblood-related charms are so weird. This charm is not a exception. I do think that these changes would make the charm more fun to use.***
 ## Hiveblood
 - Notch cost: 4 => 3.
 - Always regenerates masks for player.

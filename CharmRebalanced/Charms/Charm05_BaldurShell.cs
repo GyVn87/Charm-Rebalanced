@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm05_BaldurShell {
-        internal static int newBlockerHits = 6;
-        internal static int brokenStage1 = 4; // Equal to when vanilla Baldur Shell takes 1 hit
-        internal static int brokenStage2 = 2; // Equal to when vanilla Baldur Shell takes 2 hits
+        private static int newBlockerHits = 6;
+        private static int brokenStage1 = 4; // Equal to when vanilla Baldur Shell takes 1 hit
+        private static int brokenStage2 = 2; // Equal to when vanilla Baldur Shell takes 2 hits
 
         internal static int OnBeforeAddHealth(int amount) {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;
@@ -36,7 +36,7 @@ namespace TuyenTuyenTuyen.Charms {
         /// override IntSwitch.OnEnter() method of state "Blocker Hit" of FSM Blocker Shield
         /// </summary>
         internal static void OnIntSwitch_OnEnter(On.HutongGames.PlayMaker.Actions.IntSwitch.orig_OnEnter orig, HutongGames.PlayMaker.Actions.IntSwitch self) {
-            if (self.State.Name != "Blocker Hit") {
+            if (self.State.Name != "Blocker Hit" || self.Owner.name != "Blocker Shield") {
                 orig(self);
                 return;
             }
@@ -50,13 +50,9 @@ namespace TuyenTuyenTuyen.Charms {
                 self.Fsm.Event("1"); // STAGE 3
         }
 
-        internal static void OnSetMeshRenderer_OnEnter(On.HutongGames.PlayMaker.Actions.SetMeshRenderer.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SetMeshRenderer self) {
-            if (self.State.Name != "HUD Icon Up") {
-                orig(self);
-                return;
-            }
-            CharmRebalanced.LoadedInstance.PD.SetInt("blockerHits", newBlockerHits);
+        internal static void OnPDMaxHealth(On.PlayerData.orig_MaxHealth orig, PlayerData self) {
             orig(self);
+            self.SetInt("blockerHits", newBlockerHits);
         }
     }
 }
