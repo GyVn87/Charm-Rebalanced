@@ -1,7 +1,7 @@
 ﻿namespace TuyenTuyenTuyen.Charms {
     internal static class Charm20_SoulCatcher {
-        private static int soulCharge = 3;
-        private static int soulReserve = 3;
+        private static readonly int soulCharge = 3;
+        private static readonly int soulReserve = 3;
 
         // Subtracting the vanilla soul gain and adding the new ones.
         // This additive approach allows the mod can work with other mods that affect soul gain.

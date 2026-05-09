@@ -1,13 +1,11 @@
-﻿using HutongGames.PlayMaker.Actions;
-using System;
-using System.Threading.Tasks;
+﻿using System;
 using UnityEngine;
 
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm05_BaldurShell {
-        private static int newBlockerHits = 6;
-        private static int brokenStage1 = 4; // Equal to when vanilla Baldur Shell takes 1 hit
-        private static int brokenStage2 = 2; // Equal to when vanilla Baldur Shell takes 2 hits
+        private static readonly int newBlockerHits = 6;
+        private static readonly int brokenStage1 = 4; // Equal to when vanilla Baldur Shell takes 1 hit
+        private static readonly int brokenStage2 = 2; // Equal to when vanilla Baldur Shell takes 2 hits
 
         internal static int OnBeforeAddHealth(int amount) {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;

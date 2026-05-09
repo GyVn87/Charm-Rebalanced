@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TuyenTuyenTuyen.Charms {
+﻿namespace TuyenTuyenTuyen.Charms {
     internal static class Charm09_LifebloodCore {
-        private static int blueHealthIncreases = 6;
+        private static readonly int blueHealthIncreases = 6;
 
         internal static void OnUpdateBlueHealth(On.PlayerData.orig_UpdateBlueHealth orig, PlayerData self) {
             orig(self);

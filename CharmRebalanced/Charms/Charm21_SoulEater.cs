@@ -1,7 +1,7 @@
 ﻿namespace TuyenTuyenTuyen.Charms {
     internal static class Charm21_SoulEater {
-        private static int soulCharge = 7;
-        private static int soulReserve = 6;
+        private static readonly int soulCharge = 7;
+        private static readonly int soulReserve = 6;
 
         internal static int OnSoulGain(int orig) {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;

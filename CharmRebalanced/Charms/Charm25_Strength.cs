@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TuyenTuyenTuyen.Charms {
+﻿namespace TuyenTuyenTuyen.Charms {
     internal static class Charm25_Strength {
-        private static float strengthMutiplier = 1.35f;
+        private static readonly float strengthMutiplier = 1.35f;
 
         internal static void OnFloatMutiply_OnEnter(On.HutongGames.PlayMaker.Actions.FloatMultiply.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FloatMultiply self) {
             if (self.Fsm.Name == "nailart_damage" && self.State.Name == "Init") {

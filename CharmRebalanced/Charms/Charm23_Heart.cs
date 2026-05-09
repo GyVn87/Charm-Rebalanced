@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm23_Heart {
-        private static int masksIncreases = 3;
+        private static readonly int masksIncreases = 3;
 
         internal static void OnCharmUpdate(PlayerData data, HeroController controller) {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm27_JoniBlessing {
-        private static float masksIncreases = 1.5f;
+        private static readonly float masksIncreases = 1.5f;
 
         internal static void OnCharmUpdate(PlayerData data, HeroController controller) {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;

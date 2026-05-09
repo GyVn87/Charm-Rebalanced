@@ -45,6 +45,10 @@
       <HintPath>$(ManagedFolder)\MMHOOK_Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="MMHOOK_PlayMaker">
+      <HintPath>$(ManagedFolder)\MMHOOK_PlayMaker.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="PlayMaker">
       <HintPath>$(ManagedFolder)\PlayMaker.dll</HintPath>
       <Private>False</Private>
@@ -70,20 +74,20 @@
     <Compile Include="CharmRebalanced.cs" />
     <Compile Include="Charms\Charm05_BaldurShell.cs" />
     <Compile Include="Charms\Charm09_LifebloodCore.cs" />
+    <Compile Include="Charms\Charm16_SharpShadow.cs" />
     <Compile Include="Charms\Charm20_SoulCatcher.cs" />
     <Compile Include="Charms\Charm21_SoulEater.cs" />
     <Compile Include="Charms\Charm03_GrubSong.cs" />
     <Compile Include="Charms\Charm23_Heart.cs" />
+    <Compile Include="Charms\Charm24_Greed.cs" />
     <Compile Include="Charms\Charm25_Strength.cs" />
     <Compile Include="Charms\Charm27_JoniBlessing.cs" />
     <Compile Include="Charms\Charm29_Hiveblood.cs" />
+    <Compile Include="Charms\Charm31_Dashmaster.cs" />
     <Compile Include="Charms\Charm34_DeepFocus.cs" />
+    <Compile Include="Charms\Charm37_Sprintmaster.cs" />
     <Compile Include="Charms\NewCharmCosts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="$(ManagedFolder)\UnityEngine.CoreModule.dll" />
-    <Analyzer Include="$(ManagedFolder)\UnityEngine.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
