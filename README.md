@@ -5,12 +5,13 @@ This is my first time modding Hollow Knight, there are so much to learn so the p
 # How to install
 * Change the game version to `1.5.78.11833`
 ![How to change the game version](https://media.discordapp.net/attachments/1207486627124093019/1469343521260703867/steambetas2.jpg?ex=69fd4e8a&is=69fbfd0a&hm=753c394259c15c2b3de099d0fec43cc28aebf208aa3326eb36aacb98cdd1bdb0&format=webp&width=2682&height=1546&)
-* Install `Lumafly`, you can get it from here: https://themulhima.github.io/Lumafly/
 * Locate the `Game Files` folder, you can follow this guide: https://www.reddit.com/r/HollowKnight/comments/1d11mq9/comment/l5qsdds/
+* Download and extract the lastest release of Modding API: https://github.com/hk-modding/api/releases
+* From `Game Files` folder, move all the files from Modding API folder, to `hollow_knight_Data\Managed`, allow replacing some the files.
 * Download and extract the lastest release of the mod.
 * From `Game Files` folder, move the mod folder to `hollow_knight_Data\Managed\Mods` (if you don't have the `Mods` folder, create it).
-* Run `Lumafly`, choose `Launch Modded Game`.
-* Next times, you just need to lauch Hollow Knight as usual.
+* Launch the game and ENJOY ツ (you can disable the mod in `Main Menu/Options/Mods`).
+* If you want to revert back to vanilla, you just need to go to `Steam Library/Hollow Knight/Properties/Installed Files` and choose `Verify integrity of game files`.
 
 # Changes
 ## Soul Catcher
