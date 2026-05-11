@@ -3,13 +3,13 @@
         private static readonly float strengthMutiplier = 1.35f;
 
         internal static void OnFloatMutiply_OnEnter(On.HutongGames.PlayMaker.Actions.FloatMultiply.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FloatMultiply self) {
+            orig(self);
             if (self.Fsm.Name == "nailart_damage" && self.State.Name == "Init") {
                 if (CharmRebalanced.LoadedInstance.PD.GetBool("equippedCharm_25"))
                     self.floatVariable.Value *= strengthMutiplier;
             }
-            else if (self.State.Name == "Glass Attack Modifier")
-                self.multiplyBy.Value = strengthMutiplier;
-            orig(self);
+            else if (self.Fsm.Name == "Set Slash Damage" && self.State.Name == "Glass Attack Modifier")
+                self.floatVariable.Value = self.floatVariable.Value / self.multiplyBy.Value * strengthMutiplier;
         }
     }
 }

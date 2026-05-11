@@ -74,7 +74,10 @@
     <Compile Include="CharmRebalanced.cs" />
     <Compile Include="Charms\Charm05_BaldurShell.cs" />
     <Compile Include="Charms\Charm09_LifebloodCore.cs" />
+    <Compile Include="Charms\Charm11_Flukenest.cs" />
+    <Compile Include="Charms\Charm12_ThornsOfAgony.cs" />
     <Compile Include="Charms\Charm16_SharpShadow.cs" />
+    <Compile Include="Charms\Charm19_ShamanStone.cs" />
     <Compile Include="Charms\Charm20_SoulCatcher.cs" />
     <Compile Include="Charms\Charm21_SoulEater.cs" />
     <Compile Include="Charms\Charm03_GrubSong.cs" />
@@ -84,8 +87,12 @@
     <Compile Include="Charms\Charm27_JoniBlessing.cs" />
     <Compile Include="Charms\Charm29_Hiveblood.cs" />
     <Compile Include="Charms\Charm31_Dashmaster.cs" />
+    <Compile Include="Charms\Charm32_QuickSlash.cs" />
     <Compile Include="Charms\Charm34_DeepFocus.cs" />
     <Compile Include="Charms\Charm37_Sprintmaster.cs" />
+    <Compile Include="Charms\Charm38_Dreamshield.cs" />
+    <Compile Include="Charms\Charm39_Weaversong.cs" />
+    <Compile Include="Charms\Charm40_Grimmchild.cs" />
     <Compile Include="Charms\NewCharmCosts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

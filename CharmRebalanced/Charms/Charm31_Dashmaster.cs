@@ -1,7 +1,7 @@
 ﻿namespace TuyenTuyenTuyen.Charms {
     internal static class Charm31_Dashmaster {
         private static readonly float dashSpeed = 20.0f;
-        private static readonly float dashSpeedMaster = dashSpeed * 1.2f;
+        private static readonly float dashSpeedMaster = dashSpeed * 1.1f;
         private static readonly float shadowDashCooldown = 1.5f;
         private static readonly float shadowDashCooldownMaster = shadowDashCooldown * 0.8f;
 

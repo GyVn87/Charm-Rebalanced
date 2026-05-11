@@ -5,11 +5,10 @@ namespace TuyenTuyenTuyen.Charms {
         private static readonly int masksIncreases = 3;
 
         internal static void OnCharmUpdate(PlayerData data, HeroController controller) {
-            PlayerData PD = CharmRebalanced.LoadedInstance.PD;
-            if (PD.GetBool("equippedCharm_23") && !PD.GetBool("brokenCharm_23"))
-                PD.SetInt("maxHealth", PD.GetInt("maxHealthBase") + masksIncreases);
+            if (data.GetBool("equippedCharm_23") && !data.GetBool("brokenCharm_23"))
+                data.SetInt("maxHealth", data.GetInt("maxHealthBase") + masksIncreases);
             else
-                PD.SetInt("maxHealth", PD.GetInt("maxHealthBase"));
+                data.SetInt("maxHealth", data.GetInt("maxHealthBase"));
             controller.MaxHealth();
         }
 

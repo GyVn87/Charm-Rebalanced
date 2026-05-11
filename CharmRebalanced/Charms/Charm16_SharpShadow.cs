@@ -12,9 +12,9 @@
         }
 
         internal static void OnFloatMultiplyV2_OnEnter(On.HutongGames.PlayMaker.Actions.FloatMultiplyV2.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FloatMultiplyV2 self) {
-            if (self.Fsm.Name == "Set Sharp Shadow Damage" && self.State.Name == "Master")
-                self.multiplyBy = shadowDashDamageMaster;
             orig(self);
+            if (self.Fsm.Name == "Set Sharp Shadow Damage" && self.State.Name == "Master")
+                self.floatVariable.Value = self.floatVariable.Value / self.multiplyBy.Value * shadowDashDamageMaster;
         }
 
         internal static void OnConvertFloatToInt_OnEnter(On.HutongGames.PlayMaker.Actions.ConvertFloatToInt.orig_OnEnter orig, HutongGames.PlayMaker.Actions.ConvertFloatToInt self) {

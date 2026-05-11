@@ -3,13 +3,11 @@
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm34_DeepFocus {
         private static readonly float deepFocusSpeedIncreases = 1.5f;
+
         internal static void OnFloatMutiply_OnEnter(On.HutongGames.PlayMaker.Actions.FloatMultiply.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FloatMultiply self) {
-            if (self.State.Name != "Deep Focus Speed") {
-                orig(self);
-                return;
-            }
-            self.multiplyBy.Value = deepFocusSpeedIncreases;
             orig(self);
+            if (self.Fsm.Name == "Spell Control" && self.State.Name == "Deep Focus Speed")
+                self.floatVariable.Value = self.floatVariable.Value / self.multiplyBy.Value * deepFocusSpeedIncreases;
         }
     }
 }

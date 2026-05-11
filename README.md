@@ -13,17 +13,26 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 * If you want to revert back to vanilla, you just need to go to `Steam Library/Hollow Knight/Properties/Installed Files` and choose `Verify integrity of game files`.
 
 # Changes
+## Vengeful Spirit & Shade Soul
+- Vengeful Spirit's base damage: 15 => 20
+- Shade Soul's base damage: 30 => 40
+
+***Wait a minute, I thought this mod only modifies charms!? ...Yeah, well, I just came up with these changes while balancing Shaman Stone. And it just fits so well.***
 ## Soul Catcher
 - Soul gain when Soul Meter is full: 2 => 3.
 
 ***This makes Soul Catcher more viable in late game with the help of Soul Vessels without making it too strong in early game.***
+## Shaman Stone
+- **ALL SPELL DAMAGE** increase: 35%
+
+***Don't worry. This charm is still extremely powerful. I might even want to nerf it to 1% increase.***
 ## Soul Eater
 - Notch cost: 4 => 3.
 - Soul gain when Soul Meter is not full: 8 => 7. 
 
 ***The 4-notch cost is extremely high and I don't find the benefits really worth it. Hopefully this change makes Soul Eater more efficient to use.***
 ## Dashmaster
-- Increase Mothwing Cloak dash speed by 20% (note that this is also apply on Shadow Dash, this is how the original logic works)
+- Increase Mothwing Cloak dash speed by 10% (note that this also applies on Shadow Dash, this is how the original logic works)
 - Reduce Shadow Dash cooldown by 20%.
 - Remove synergy with Sharp Shadow.
 - Remove synergy with Sprintmaster.
@@ -55,11 +64,29 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 - Damage increases also applies on Nail Art.
 
 ***This charm certainly needs a nerf, 50% increases in damage is purely evil. Moreover, is it weird when the charm only applies on Nail, don't you think?***
+## Quickslash
+- Attack speed increase: 46% => 33%
+
+***This charm is really flexible when it can be use to both increase damage output and soul gain. It certainly needs a little nerf!***
+## Thorns Of Agony
+- Thorn damage: 1x => 2x Nail damage
+- I have noticed that in best cases, the total damage could be up to 4x Nail damage.
+
+***Cool charm but needs a little buff***
 ## Baldur Shell
 - Can now be restored by the amount of healed masks when player heals at full masks.
 - Now caps at 6 blocker hits.
 
 ***I feel like this change would encourage a new playstyle without making it overpowered. With this, focusing in Radiant boss fights is no longer entirely useless.***
+## Flukenest
+- Notch cost: 3 => 2
+- Multihits bug has been fixed in the lasted version of the game, but the current Modding API-supportable version haven't not. However, I fixed it somehow. 
+- Vengeful Spirit + Flukenest: 8 flukes x 5 damage (36 => 40)
+- Vengeful Spirit + Flukenest + Shaman Stone: 9 flukes x 6 damage (45 => 54)
+- Shade Soul + Flukenest: 16 flukes x 5 damage (64 => 80)
+- Shade Soul + Flukenest + Shaman Stone: 16 flukes x 7 damage (80 => 112)
+
+***I love how this charm make spell so much stronger and fun to use since it basically makes Vengeful Spirit and Shade Soul a shotgun. I think it deserves more!***
 ## Deep Focus
 - Notch cost: 4 => 3.
 - Focus time increase: 65% => 50%.
@@ -84,6 +111,10 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 - Its behavior with Joni's Blessing is not changed.
 
 ***I always hear everyone complains that this charm is not worth using it. Buffing it may be a good idea, but I feel like it is too overpowered?***
+## Shade Of Unn
+- Notch cost: 2 => 1
+
+***A simple yet profound charm, it has so much potential. But I belive it should only cost 1 notch slot.***
 ## Sharp Shadow
 - Shadow Dash speed increase: 40% => 30%
 - Damage enemies for: 1x => 2x Nail damage
@@ -91,3 +122,22 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 - Remove synergy with Dashmaster.
 
 ***I do believe this charm is a little too overpowered. But I can't help but buffing it, everyone loves dashing, right...?***
+## Weaversong
+- Each weaversling now deals: 1/3 Nail damage.
+- Each successful hit gain player 3 soul by default.
+- Remove synergy with Grubsong.
+
+***I love summoner playstyle, but this charm is really ineffective. I believe the effect that gain player soul on hit would make this charm unique to other summon charms.***
+## Dreamshield
+- Notch cost: 3 => 2
+- Now summons 2 shields at a time.
+
+***I like this change, but wonder if it makes this charm too powerful.***
+## Grimmchild
+- Damage per shot:
+  - Level 2: 5 => 11
+  - Level 3: 8 => 16
+  - Level 4: 11 => 21
+- Grimmchild can now shoots more ***ACCURATELY***.
+
+***As I said before, I love summoner playstyle. Despite this charm's unlimited power, I still buffed it to make it even stronger.***
