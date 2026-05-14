@@ -13,7 +13,15 @@ namespace TuyenTuyenTuyen.Charms {
         private static readonly int shockwaveDarkDamage = 30;
         private static readonly float spellDamageIncrease = 1.35f;
 
-        internal static void OnSetFsmInt_OnEnter(On.HutongGames.PlayMaker.Actions.SetFsmInt.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SetFsmInt self) {
+        internal static void Load() {
+            On.HutongGames.PlayMaker.Actions.SetFsmInt.OnEnter += Charm19_ShamanStone.OnSetFsmInt_OnEnter;
+        }
+
+        internal static void Unload() {
+            On.HutongGames.PlayMaker.Actions.SetFsmInt.OnEnter -= Charm19_ShamanStone.OnSetFsmInt_OnEnter;
+        }
+
+        private static void OnSetFsmInt_OnEnter(On.HutongGames.PlayMaker.Actions.SetFsmInt.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SetFsmInt self) {
             orig(self);
             if (self.State.Name != "Set Damage") 
                 return;

@@ -1,5 +1,4 @@
-﻿using Modding;
-using System.Reflection;
+﻿using System.Reflection;
 using TuyenTuyenTuyen.Charms;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ namespace TuyenTuyenTuyen {
 		/// it will recalculate the value which helps us get the most up-to-date data.
 		/// </summary>
 		public PlayerData PD => PlayerData.instance;
-		public GameObject Knight => HeroController.instance.gameObject;
+        public GameObject Knight => HeroController.instance.gameObject;
 
 		public override string GetVersion() => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
@@ -19,99 +18,75 @@ namespace TuyenTuyenTuyen {
 			if (CharmRebalanced.LoadedInstance != null) return;
 			CharmRebalanced.LoadedInstance = this;
 
-            ModHooks.CharmUpdateHook += Charm31_Dashmaster.OnCharmUpdate; // this has to be registered before Sharp Shadow's logic to ensure correct dash speed calculation
-
-			On.HeroController.Awake += Charm03_GrubSong.OnHCAwake;
-            ModHooks.TakeHealthHook += Charm03_GrubSong.OnTakeHealth;
-			On.HutongGames.PlayMaker.Actions.IntSwitch.OnEnter += Charm05_BaldurShell.OnIntSwitch_OnEnter;
-			On.PlayerData.MaxHealth += Charm05_BaldurShell.OnPDMaxHealth;
-			ModHooks.BeforeAddHealthHook += Charm05_BaldurShell.OnBeforeAddHealth;
-			On.PlayerData.UpdateBlueHealth += Charm09_LifebloodCore.OnUpdateBlueHealth;
-            On.SpellFluke.DoDamage += Charm11_Flukenest.ONSFDoDamage;
-            On.HutongGames.PlayMaker.Actions.FlingObjectsFromGlobalPool.OnEnter += Charm11_Flukenest.OnFlingObjectsFromGlobalPool_OnEnter;
-            On.SpellFluke.OnEnable += Charm11_Flukenest.ONSFOnEnable;
-            On.HutongGames.PlayMaker.Actions.SetFsmInt.OnEnter += Charm12_ThornsOfAgony.OnSetFsmInt_OnEnter;
-            On.HutongGames.PlayMaker.Actions.FloatMultiplyV2.OnEnter += Charm16_SharpShadow.OnFloatMultiplyV2_OnEnter;
-            On.HutongGames.PlayMaker.Actions.ConvertFloatToInt.OnEnter += Charm16_SharpShadow.OnConvertFloatToInt_OnEnter;
-            ModHooks.CharmUpdateHook += Charm16_SharpShadow.OnCharmUpdate;
-            On.HutongGames.PlayMaker.Actions.SetFsmInt.OnEnter += Charm19_ShamanStone.OnSetFsmInt_OnEnter;
-            ModHooks.SoulGainHook += Charm20_SoulCatcher.OnSoulGain;
-            ModHooks.SoulGainHook += Charm21_SoulEater.OnSoulGain;
-            On.HUDCamera.OnEnable += Charm23_Heart.OnHCOnEnable;
-            ModHooks.CharmUpdateHook += Charm23_Heart.OnCharmUpdate; // this has to be registered before Joni's Blessing's logic to ensure correct health calculation
-            On.HutongGames.PlayMaker.Fsm.DoTransition += Charm24_Greed.OnFsmDoTransition;
-            On.HealthManager.Die += Charm24_Greed.OnHMDie;
-			On.HutongGames.PlayMaker.Actions.FloatMultiply.OnEnter += Charm25_Strength.OnFloatMutiply_OnEnter;
-			ModHooks.CharmUpdateHook += Charm27_JoniBlessing.OnCharmUpdate;
-            ModHooks.HeroUpdateHook += Charm29_Hiveblood.OnHeroUpdate;
-            ModHooks.CharmUpdateHook += Charm32_QuickSlash.OnCharmUpdate;
-			On.HutongGames.PlayMaker.Actions.FloatMultiply.OnEnter += Charm34_DeepFocus.OnFloatMutiply_OnEnter;
-            ModHooks.CharmUpdateHook += Charm37_Sprintmaster.OnCharmUpdate;
-            On.HutongGames.PlayMaker.Actions.SpawnObjectFromGlobalPool.OnEnter += Charm38_Dreamshield.OnSpawnObjectFromGlobalPool_OnEnter;
-            On.HutongGames.PlayMaker.Actions.SendEventByName.OnEnter += Charm38_Dreamshield.OnSendEventByName_OnEnter;
-            On.HutongGames.PlayMaker.Actions.PlayerDataBoolTest.OnEnter += Charm39_Weaversong.OnPlayerDataBoolTest_OnEnter;
-            On.HutongGames.PlayMaker.Actions.CallMethodProper.OnEnter += Charm39_Weaversong.OnCallMethodProper_OnEnter;
-            On.HutongGames.PlayMaker.Actions.FireAtTarget.OnEnter += Charm40_Grimmchild.OnFireAtTarget_OnEnter;
-            On.HutongGames.PlayMaker.Actions.SetIntValue.OnEnter += Charm40_Grimmchild.OnSetIntValue_OnEnter;
-            ModHooks.GetPlayerIntHook += NewCharmCosts.OnGetInt;
-        }
+			Charm31_Dashmaster.Load();  // has to be called before Sharp Shadow'
+			Charm03_GrubSong.Load();
+			Charm05_BaldurShell.Load();
+			Charm09_LifebloodCore.Load();
+			Charm11_Flukenest.Load();
+			Charm12_ThornsOfAgony.Load();
+			Charm16_SharpShadow.Load();
+			Charm19_ShamanStone.Load();
+			Charm20_SoulCatcher.Load();
+			Charm21_SoulEater.Load();
+			Charm23_Heart.Load();  // has to be called before Joni's Blessing
+			Charm24_Greed.Load();
+			Charm25_Strength.Load();
+			Charm27_JoniBlessing.Load();
+			Charm29_Hiveblood.Load();  
+			Charm32_QuickSlash.Load();
+			Charm34_DeepFocus.Load();
+			Charm35_GrubberflyElegy.Load();
+			Charm37_Sprintmaster.Load();
+			Charm38_Dreamshield.Load();
+			Charm39_Weaversong.Load(); 
+			Charm40_Grimmchild.Load();
+			NewCharmCosts.Load();
+		}
 
 		public void Unload() {
 			CharmRebalanced.LoadedInstance = null;
-            if (HeroController.instance != null)
-                RevertChanges();
+			if (HeroController.instance != null)
+				RevertChanges();
 
-            ModHooks.CharmUpdateHook -= Charm31_Dashmaster.OnCharmUpdate;
+			Charm31_Dashmaster.Unload();
+			Charm03_GrubSong.Unload();
+			Charm05_BaldurShell.Unload();
+			Charm09_LifebloodCore.Unload();
+			Charm11_Flukenest.Unload();
+			Charm12_ThornsOfAgony.Unload();
+			Charm16_SharpShadow.Unload();
+			Charm19_ShamanStone.Unload();
+			Charm20_SoulCatcher.Unload();
+			Charm21_SoulEater.Unload();
+			Charm23_Heart.Unload();
+			Charm24_Greed.Unload();
+			Charm25_Strength.Unload();
+			Charm27_JoniBlessing.Unload();
+			Charm29_Hiveblood.Unload();
+			Charm32_QuickSlash.Unload();
+			Charm34_DeepFocus.Unload();
+			Charm35_GrubberflyElegy.Unload();
+			Charm37_Sprintmaster.Unload();
+			Charm38_Dreamshield.Unload();
+			Charm39_Weaversong.Unload();
+			Charm40_Grimmchild.Unload();
+			NewCharmCosts.Unload();
+		}
 
-            On.HeroController.Awake -= Charm03_GrubSong.OnHCAwake;
-            ModHooks.TakeHealthHook -= Charm03_GrubSong.OnTakeHealth;
-            On.HutongGames.PlayMaker.Actions.IntSwitch.OnEnter -= Charm05_BaldurShell.OnIntSwitch_OnEnter;
-            On.PlayerData.MaxHealth -= Charm05_BaldurShell.OnPDMaxHealth;
-            ModHooks.BeforeAddHealthHook -= Charm05_BaldurShell.OnBeforeAddHealth;
-            On.PlayerData.UpdateBlueHealth -= Charm09_LifebloodCore.OnUpdateBlueHealth;
-            On.SpellFluke.DoDamage -= Charm11_Flukenest.ONSFDoDamage;
-            On.HutongGames.PlayMaker.Actions.FlingObjectsFromGlobalPool.OnEnter -= Charm11_Flukenest.OnFlingObjectsFromGlobalPool_OnEnter;
-            On.SpellFluke.OnEnable -= Charm11_Flukenest.ONSFOnEnable;
-            On.HutongGames.PlayMaker.Actions.SetFsmInt.OnEnter -= Charm12_ThornsOfAgony.OnSetFsmInt_OnEnter;
-            On.HutongGames.PlayMaker.Actions.FloatMultiplyV2.OnEnter -= Charm16_SharpShadow.OnFloatMultiplyV2_OnEnter;
-            On.HutongGames.PlayMaker.Actions.ConvertFloatToInt.OnEnter -= Charm16_SharpShadow.OnConvertFloatToInt_OnEnter;
-            ModHooks.CharmUpdateHook -= Charm16_SharpShadow.OnCharmUpdate;
-            On.HutongGames.PlayMaker.Actions.SetFsmInt.OnEnter -= Charm19_ShamanStone.OnSetFsmInt_OnEnter;
-            ModHooks.SoulGainHook -= Charm20_SoulCatcher.OnSoulGain;
-            ModHooks.SoulGainHook -= Charm21_SoulEater.OnSoulGain;
-            On.HUDCamera.OnEnable -= Charm23_Heart.OnHCOnEnable;
-            ModHooks.CharmUpdateHook -= Charm23_Heart.OnCharmUpdate;
-            On.HutongGames.PlayMaker.Fsm.DoTransition -= Charm24_Greed.OnFsmDoTransition;
-            On.HealthManager.Die -= Charm24_Greed.OnHMDie;
-            On.HutongGames.PlayMaker.Actions.FloatMultiply.OnEnter -= Charm25_Strength.OnFloatMutiply_OnEnter;
-            ModHooks.CharmUpdateHook -= Charm27_JoniBlessing.OnCharmUpdate;
-            ModHooks.HeroUpdateHook -= Charm29_Hiveblood.OnHeroUpdate;
-            ModHooks.CharmUpdateHook -= Charm32_QuickSlash.OnCharmUpdate;
-            On.HutongGames.PlayMaker.Actions.FloatMultiply.OnEnter -= Charm34_DeepFocus.OnFloatMutiply_OnEnter;
-            ModHooks.CharmUpdateHook -= Charm37_Sprintmaster.OnCharmUpdate;
-            On.HutongGames.PlayMaker.Actions.SpawnObjectFromGlobalPool.OnEnter -= Charm38_Dreamshield.OnSpawnObjectFromGlobalPool_OnEnter;
-            On.HutongGames.PlayMaker.Actions.SendEventByName.OnEnter -= Charm38_Dreamshield.OnSendEventByName_OnEnter;
-            On.HutongGames.PlayMaker.Actions.PlayerDataBoolTest.OnEnter -= Charm39_Weaversong.OnPlayerDataBoolTest_OnEnter;
-            On.HutongGames.PlayMaker.Actions.CallMethodProper.OnEnter -= Charm39_Weaversong.OnCallMethodProper_OnEnter;
-            On.HutongGames.PlayMaker.Actions.FireAtTarget.OnEnter -= Charm40_Grimmchild.OnFireAtTarget_OnEnter;
-            On.HutongGames.PlayMaker.Actions.SetIntValue.OnEnter -= Charm40_Grimmchild.OnSetIntValue_OnEnter;
-            ModHooks.GetPlayerIntHook -= NewCharmCosts.OnGetInt;
-        }
-
-        private void RevertChanges() {
-            HeroController HC = HeroController.instance;
-            HC.GRUB_SOUL_MP = 15;
-            HC.GRUB_SOUL_MP_COMBO = 25;
-            HC.RUN_SPEED = 8.3f;
-            HC.RUN_SPEED_CH = 10.0f;
-            HC.RUN_SPEED_CH_COMBO = 11.5f;
-            HC.DASH_SPEED = 20.0f;
-            HC.DASH_SPEED_SHARP = 28.0f;
-            HC.SHADOW_DASH_COOLDOWN = 1.5f;
-            HC.ATTACK_COOLDOWN_TIME = 0.41f;
-            HC.ATTACK_COOLDOWN_TIME_CH = 0.25f;
-            HC.ATTACK_DURATION = 0.35f;
-            HC.ATTACK_DURATION_CH = 0.28f;
-        }
-    }
+		private void RevertChanges() {
+			HeroController HC = HeroController.instance;
+			HC.GRUB_SOUL_MP = 15;
+			HC.GRUB_SOUL_MP_COMBO = 25;
+			HC.RUN_SPEED = 8.3f;
+			HC.RUN_SPEED_CH = 10.0f;
+			HC.RUN_SPEED_CH_COMBO = 11.5f;
+			HC.DASH_SPEED = 20.0f;
+			HC.DASH_SPEED_SHARP = 28.0f;
+			HC.SHADOW_DASH_COOLDOWN = 1.5f;
+			HC.ATTACK_COOLDOWN_TIME = 0.41f;
+			HC.ATTACK_COOLDOWN_TIME_CH = 0.25f;
+			HC.ATTACK_DURATION = 0.35f;
+			HC.ATTACK_DURATION_CH = 0.28f;
+		}
+	}
 }

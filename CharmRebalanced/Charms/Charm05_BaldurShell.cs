@@ -7,7 +7,19 @@ namespace TuyenTuyenTuyen.Charms {
         private static readonly int brokenStage1 = 4; // Equal to when vanilla Baldur Shell takes 1 hit
         private static readonly int brokenStage2 = 2; // Equal to when vanilla Baldur Shell takes 2 hits
 
-        internal static int OnBeforeAddHealth(int amount) {
+        internal static void Load() {
+            On.HutongGames.PlayMaker.Actions.IntSwitch.OnEnter += Charm05_BaldurShell.OnIntSwitch_OnEnter;
+            On.PlayerData.MaxHealth += Charm05_BaldurShell.OnPDMaxHealth;
+            ModHooks.BeforeAddHealthHook += Charm05_BaldurShell.OnBeforeAddHealth;
+        }
+
+        internal static void Unload() {
+            On.HutongGames.PlayMaker.Actions.IntSwitch.OnEnter -= Charm05_BaldurShell.OnIntSwitch_OnEnter;
+            On.PlayerData.MaxHealth -= Charm05_BaldurShell.OnPDMaxHealth;
+            ModHooks.BeforeAddHealthHook -= Charm05_BaldurShell.OnBeforeAddHealth;
+        }
+
+        private static int OnBeforeAddHealth(int amount) {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;
             if (!PD.GetBool("equippedCharm_5"))
                 return amount;
@@ -33,7 +45,7 @@ namespace TuyenTuyenTuyen.Charms {
         /// <summary>
         /// override IntSwitch.OnEnter() method of state "Blocker Hit" of FSM Blocker Shield
         /// </summary>
-        internal static void OnIntSwitch_OnEnter(On.HutongGames.PlayMaker.Actions.IntSwitch.orig_OnEnter orig, HutongGames.PlayMaker.Actions.IntSwitch self) {
+        private static void OnIntSwitch_OnEnter(On.HutongGames.PlayMaker.Actions.IntSwitch.orig_OnEnter orig, HutongGames.PlayMaker.Actions.IntSwitch self) {
             if (self.State.Name != "Blocker Hit" || self.Owner.name != "Blocker Shield") {
                 orig(self);
                 return;
@@ -48,7 +60,7 @@ namespace TuyenTuyenTuyen.Charms {
                 self.Fsm.Event("1"); // STAGE 3
         }
 
-        internal static void OnPDMaxHealth(On.PlayerData.orig_MaxHealth orig, PlayerData self) {
+        private static void OnPDMaxHealth(On.PlayerData.orig_MaxHealth orig, PlayerData self) {
             orig(self);
             self.SetInt("blockerHits", newBlockerHits);
         }

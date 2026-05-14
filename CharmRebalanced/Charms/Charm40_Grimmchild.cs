@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,17 @@ namespace TuyenTuyenTuyen.Charms {
         private static readonly int lv3Damage = 16;
         private static readonly int lv4Damage = 21;
 
-        internal static void OnFireAtTarget_OnEnter(On.HutongGames.PlayMaker.Actions.FireAtTarget.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FireAtTarget self) {
+        internal static void Load() {
+            On.HutongGames.PlayMaker.Actions.FireAtTarget.OnEnter += Charm40_Grimmchild.OnFireAtTarget_OnEnter;
+            On.HutongGames.PlayMaker.Actions.SetIntValue.OnEnter += Charm40_Grimmchild.OnSetIntValue_OnEnter;
+        }
+
+        internal static void Unload() {
+            On.HutongGames.PlayMaker.Actions.FireAtTarget.OnEnter -= Charm40_Grimmchild.OnFireAtTarget_OnEnter;
+            On.HutongGames.PlayMaker.Actions.SetIntValue.OnEnter -= Charm40_Grimmchild.OnSetIntValue_OnEnter;
+        }
+
+        private static void OnFireAtTarget_OnEnter(On.HutongGames.PlayMaker.Actions.FireAtTarget.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FireAtTarget self) {
             string ownerName = self.Owner?.name;
             if (!ownerName.StartsWith("Grimmchild") || self.Fsm.Name != "Control" || self.State.Name != "Shoot") {
                 orig(self);
@@ -24,7 +34,7 @@ namespace TuyenTuyenTuyen.Charms {
             self.spread.Value = defaultSpread;
         }
 
-        internal static void OnSetIntValue_OnEnter(On.HutongGames.PlayMaker.Actions.SetIntValue.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SetIntValue self) {
+        private static void OnSetIntValue_OnEnter(On.HutongGames.PlayMaker.Actions.SetIntValue.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SetIntValue self) {
             string ownerName = self.Owner?.name;
             string stateName = self.State.Name;
             if (!ownerName.StartsWith("Grimmchild") || self.Fsm.Name != "Control" || !stateName.StartsWith("Level ")) {

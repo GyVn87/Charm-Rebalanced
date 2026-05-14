@@ -13,7 +13,15 @@ namespace TuyenTuyenTuyen.Charms {
             {"charmCost_38", 2}
         };
 
-    internal static int OnGetInt(string name, int orig) {
+        internal static void Load() {
+            ModHooks.GetPlayerIntHook += NewCharmCosts.OnGetInt;
+        }
+
+        internal static void Unload() {
+            ModHooks.GetPlayerIntHook -= NewCharmCosts.OnGetInt;
+        }
+
+        internal static int OnGetInt(string name, int orig) {
             if (NewCharmCosts.charmCosts.TryGetValue(name, out int newCost))
                 return newCost;
             return orig;

@@ -8,7 +8,17 @@ namespace TuyenTuyenTuyen.Charms {
         private static GameObject newShield;
         private static PlayMakerFSM shieldHitFSM;
 
-        internal static void OnSpawnObjectFromGlobalPool_OnEnter(On.HutongGames.PlayMaker.Actions.SpawnObjectFromGlobalPool.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SpawnObjectFromGlobalPool self) {
+        internal static void Load() {
+            On.HutongGames.PlayMaker.Actions.SpawnObjectFromGlobalPool.OnEnter += Charm38_Dreamshield.OnSpawnObjectFromGlobalPool_OnEnter;
+            On.HutongGames.PlayMaker.Actions.SendEventByName.OnEnter += Charm38_Dreamshield.OnSendEventByName_OnEnter;
+        }
+
+        internal static void Unload() {
+            On.HutongGames.PlayMaker.Actions.SpawnObjectFromGlobalPool.OnEnter -= Charm38_Dreamshield.OnSpawnObjectFromGlobalPool_OnEnter;
+            On.HutongGames.PlayMaker.Actions.SendEventByName.OnEnter -= Charm38_Dreamshield.OnSendEventByName_OnEnter;
+        }
+
+        private static void OnSpawnObjectFromGlobalPool_OnEnter(On.HutongGames.PlayMaker.Actions.SpawnObjectFromGlobalPool.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SpawnObjectFromGlobalPool self) {
             orig(self);
             string gameObjectName = self.gameObject.Value?.name;
             if (self.Fsm.Name == "Spawn Orbit Shield" && gameObjectName == "Orbit Shield") {
@@ -19,7 +29,7 @@ namespace TuyenTuyenTuyen.Charms {
             }
         }
 
-        internal static void OnSendEventByName_OnEnter(On.HutongGames.PlayMaker.Actions.SendEventByName.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SendEventByName self) {
+        private static void OnSendEventByName_OnEnter(On.HutongGames.PlayMaker.Actions.SendEventByName.orig_OnEnter orig, HutongGames.PlayMaker.Actions.SendEventByName self) {
             orig(self);
             if (self.Fsm.Name == "Spawn Orbit Shield" && self.State.Name == "Send Slash Event") {
                 if (newOrbitShield == null)

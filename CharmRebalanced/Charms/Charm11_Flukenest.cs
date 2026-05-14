@@ -18,8 +18,20 @@ namespace TuyenTuyenTuyen.Charms {
         private static readonly FieldInfo hasBursted = typeof(SpellFluke).GetField("hasBursted", BindingFlags.Instance | BindingFlags.NonPublic);
         private static readonly FieldInfo flukeDamage = typeof(SpellFluke).GetField("damage", BindingFlags.Instance | BindingFlags.NonPublic);
 
+        internal static void Load() {
+            On.SpellFluke.DoDamage += Charm11_Flukenest.ONSFDoDamage;
+            On.HutongGames.PlayMaker.Actions.FlingObjectsFromGlobalPool.OnEnter += Charm11_Flukenest.OnFlingObjectsFromGlobalPool_OnEnter;
+            On.SpellFluke.OnEnable += Charm11_Flukenest.ONSFOnEnable;
+        }
+
+        internal static void Unload() {
+            On.SpellFluke.DoDamage -= Charm11_Flukenest.ONSFDoDamage;
+            On.HutongGames.PlayMaker.Actions.FlingObjectsFromGlobalPool.OnEnter -= Charm11_Flukenest.OnFlingObjectsFromGlobalPool_OnEnter;
+            On.SpellFluke.OnEnable -= Charm11_Flukenest.ONSFOnEnable;
+        }
+
         // Somehow this solves the "Flukenest multihits" bug
-        internal static void ONSFDoDamage(On.SpellFluke.orig_DoDamage orig, SpellFluke self, GameObject obj, int upwardRecursionAmount, bool burst) {
+        private static void ONSFDoDamage(On.SpellFluke.orig_DoDamage orig, SpellFluke self, GameObject obj, int upwardRecursionAmount, bool burst) {
             bool alreadyBursted = (bool)hasBursted.GetValue(self);
             if (alreadyBursted)
                 return;
@@ -28,7 +40,7 @@ namespace TuyenTuyenTuyen.Charms {
                 hasBursted.SetValue(self, true); 
         }
 
-        internal static void OnFlingObjectsFromGlobalPool_OnEnter(On.HutongGames.PlayMaker.Actions.FlingObjectsFromGlobalPool.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FlingObjectsFromGlobalPool self) {
+        private static void OnFlingObjectsFromGlobalPool_OnEnter(On.HutongGames.PlayMaker.Actions.FlingObjectsFromGlobalPool.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FlingObjectsFromGlobalPool self) {
             if (self.Fsm.Name != "Fireball Cast" || self.State.Name != "Flukes") {
                 orig(self);
                 return;
@@ -59,7 +71,7 @@ namespace TuyenTuyenTuyen.Charms {
             self.spawnMax.Value = defaultSpawn;
         }
 
-        internal static void ONSFOnEnable(On.SpellFluke.orig_OnEnable orig, SpellFluke self) {
+        private static void ONSFOnEnable(On.SpellFluke.orig_OnEnable orig, SpellFluke self) {
             PlayerData PD = CharmRebalanced.LoadedInstance.PD;
             bool hasShamanStone = PD.GetBool("equippedCharm_19");
             int fireballLevel = PD.GetInt("fireballLevel");

@@ -11,6 +11,7 @@
     <AssemblyName>CharmRebalanced</AssemblyName>
     <!--Replace this with your Managed folder path in Game Files folder-->
     <ManagedFolder>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed</ManagedFolder>
+    <LangVersion>10.0</LangVersion>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -89,11 +90,13 @@
     <Compile Include="Charms\Charm31_Dashmaster.cs" />
     <Compile Include="Charms\Charm32_QuickSlash.cs" />
     <Compile Include="Charms\Charm34_DeepFocus.cs" />
+    <Compile Include="Charms\Charm35_GrubberflyElegy.cs" />
     <Compile Include="Charms\Charm37_Sprintmaster.cs" />
     <Compile Include="Charms\Charm38_Dreamshield.cs" />
     <Compile Include="Charms\Charm39_Weaversong.cs" />
     <Compile Include="Charms\Charm40_Grimmchild.cs" />
     <Compile Include="Charms\NewCharmCosts.cs" />
+    <Compile Include="GlobalUsings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

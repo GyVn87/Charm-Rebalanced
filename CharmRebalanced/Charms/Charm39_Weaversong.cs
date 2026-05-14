@@ -4,10 +4,21 @@ using UnityEngine;
 
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm39_Weaversong {
-        private static readonly int soulGainOnHit = 3;
         private static readonly float weaverlingDamageRatio = 0.33f; // to nail damage
+        private static readonly int soulGainOnHit = 3;
+        private static readonly int soulGainGrubsong = 5;
 
-        internal static void OnPlayerDataBoolTest_OnEnter(On.HutongGames.PlayMaker.Actions.PlayerDataBoolTest.orig_OnEnter orig, HutongGames.PlayMaker.Actions.PlayerDataBoolTest self) {
+        internal static void Load() {
+            On.HutongGames.PlayMaker.Actions.PlayerDataBoolTest.OnEnter += Charm39_Weaversong.OnPlayerDataBoolTest_OnEnter;
+            On.HutongGames.PlayMaker.Actions.CallMethodProper.OnEnter += Charm39_Weaversong.OnCallMethodProper_OnEnter;
+        }
+
+        internal static void Unload() {
+            On.HutongGames.PlayMaker.Actions.PlayerDataBoolTest.OnEnter -= Charm39_Weaversong.OnPlayerDataBoolTest_OnEnter;
+            On.HutongGames.PlayMaker.Actions.CallMethodProper.OnEnter -= Charm39_Weaversong.OnCallMethodProper_OnEnter;
+        }
+
+        private static void OnPlayerDataBoolTest_OnEnter(On.HutongGames.PlayMaker.Actions.PlayerDataBoolTest.orig_OnEnter orig, HutongGames.PlayMaker.Actions.PlayerDataBoolTest self) {
             if (self.Owner.name != "Enemy Damager" || self.Fsm.Name != "Attack" || self.State.Name != "Grubsong") {
                 orig(self);
                 return;
@@ -20,13 +31,17 @@ namespace TuyenTuyenTuyen.Charms {
             SetWeaverlingDamage(self);
         }
 
-        internal static void OnCallMethodProper_OnEnter(On.HutongGames.PlayMaker.Actions.CallMethodProper.orig_OnEnter orig, HutongGames.PlayMaker.Actions.CallMethodProper self) {
+        private static void OnCallMethodProper_OnEnter(On.HutongGames.PlayMaker.Actions.CallMethodProper.orig_OnEnter orig, HutongGames.PlayMaker.Actions.CallMethodProper self) {
             if (self.Owner.name != "Enemy Damager" || self.Fsm.Name != "Attack" || self.State.Name != "Grubsong") {
                 orig(self);
                 return;
             }
+            PlayerData PD = CharmRebalanced.LoadedInstance.PD;
             int soulGainDefault = (int)self.parameters[0].GetValue();
-            self.parameters[0].SetValue(soulGainOnHit);
+            if (PD.GetBool("equippedCharm_3"))
+                self.parameters[0].SetValue(soulGainGrubsong);
+            else
+                self.parameters[0].SetValue(soulGainOnHit);
             orig(self);
             self.parameters[0].SetValue(soulGainDefault);
         }

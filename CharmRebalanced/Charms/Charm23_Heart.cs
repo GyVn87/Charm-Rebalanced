@@ -2,17 +2,28 @@
 
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm23_Heart {
-        private static readonly int masksIncreases = 3;
+//      private static readonly int masksIncrease = 3;
+        private static readonly float masksIncreaseRatio = 0.34f;
 
-        internal static void OnCharmUpdate(PlayerData data, HeroController controller) {
+        internal static void Load() {
+            On.HUDCamera.OnEnable += Charm23_Heart.OnHCOnEnable;
+            ModHooks.CharmUpdateHook += Charm23_Heart.OnCharmUpdate; // this has to be registered before Joni's Blessing's logic to ensure correct health calculation
+        }
+
+        internal static void Unload() {
+            On.HUDCamera.OnEnable -= Charm23_Heart.OnHCOnEnable;
+            ModHooks.CharmUpdateHook -= Charm23_Heart.OnCharmUpdate;
+        }
+
+        private static void OnCharmUpdate(PlayerData data, HeroController controller) {
             if (data.GetBool("equippedCharm_23") && !data.GetBool("brokenCharm_23"))
-                data.SetInt("maxHealth", data.GetInt("maxHealthBase") + masksIncreases);
+                data.SetInt("maxHealth", Mathf.FloorToInt((float)data.GetInt("maxHealthBase") * (1f +masksIncreaseRatio)));
             else
                 data.SetInt("maxHealth", data.GetInt("maxHealthBase"));
             controller.MaxHealth();
         }
 
-        internal static void OnHCOnEnable(On.HUDCamera.orig_OnEnable orig, HUDCamera self) {
+        private static void OnHCOnEnable(On.HUDCamera.orig_OnEnable orig, HUDCamera self) {
             orig(self);
             Transform healthTransf = self.transform.Find("Hud Canvas/Health");
             GameObject health11 = healthTransf.Find("Health 11").gameObject;

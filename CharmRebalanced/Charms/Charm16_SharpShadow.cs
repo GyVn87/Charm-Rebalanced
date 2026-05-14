@@ -1,23 +1,37 @@
-﻿namespace TuyenTuyenTuyen.Charms {
+﻿using UnityEngine;
+
+namespace TuyenTuyenTuyen.Charms {
     internal static class Charm16_SharpShadow {
         private static readonly float shadowDashSpeedIncrease = 1.3f;
-        private static readonly float shadowDashDamageSharp = 2.0f;
-        private static readonly float shadowDashDamageMaster = 1.0f;
+        private static readonly float shadowDashDamageSharp = 1.5f;
+        private static readonly float shadowDashDamageMaster = 2.0f;
 
-        internal static void OnCharmUpdate(PlayerData data, HeroController controller) {
+        internal static void Load() {
+            On.HutongGames.PlayMaker.Actions.FloatMultiplyV2.OnEnter += Charm16_SharpShadow.OnFloatMultiplyV2_OnEnter;
+            On.HutongGames.PlayMaker.Actions.ConvertFloatToInt.OnEnter += Charm16_SharpShadow.OnConvertFloatToInt_OnEnter;
+            ModHooks.CharmUpdateHook += Charm16_SharpShadow.OnCharmUpdate;
+        }
+
+        internal static void Unload() {
+            On.HutongGames.PlayMaker.Actions.FloatMultiplyV2.OnEnter -= Charm16_SharpShadow.OnFloatMultiplyV2_OnEnter;
+            On.HutongGames.PlayMaker.Actions.ConvertFloatToInt.OnEnter -= Charm16_SharpShadow.OnConvertFloatToInt_OnEnter;
+            ModHooks.CharmUpdateHook -= Charm16_SharpShadow.OnCharmUpdate;
+        }
+
+        private static void OnCharmUpdate(PlayerData data, HeroController controller) {
             if (data.GetBool("equippedCharm_16"))
                 controller.DASH_SPEED_SHARP = controller.DASH_SPEED * shadowDashSpeedIncrease;
             else
                 controller.DASH_SPEED_SHARP = controller.DASH_SPEED;
         }
 
-        internal static void OnFloatMultiplyV2_OnEnter(On.HutongGames.PlayMaker.Actions.FloatMultiplyV2.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FloatMultiplyV2 self) {
+        private static void OnFloatMultiplyV2_OnEnter(On.HutongGames.PlayMaker.Actions.FloatMultiplyV2.orig_OnEnter orig, HutongGames.PlayMaker.Actions.FloatMultiplyV2 self) {
             orig(self);
             if (self.Fsm.Name == "Set Sharp Shadow Damage" && self.State.Name == "Master")
                 self.floatVariable.Value = self.floatVariable.Value / self.multiplyBy.Value * shadowDashDamageMaster;
         }
 
-        internal static void OnConvertFloatToInt_OnEnter(On.HutongGames.PlayMaker.Actions.ConvertFloatToInt.orig_OnEnter orig, HutongGames.PlayMaker.Actions.ConvertFloatToInt self) {
+        private static void OnConvertFloatToInt_OnEnter(On.HutongGames.PlayMaker.Actions.ConvertFloatToInt.orig_OnEnter orig, HutongGames.PlayMaker.Actions.ConvertFloatToInt self) {
             if (self.Fsm.Name == "Set Sharp Shadow Damage" && self.State.Name == "Set") 
                 self.floatVariable.Value *= shadowDashDamageSharp;
             orig(self);

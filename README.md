@@ -32,26 +32,55 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 
 ***The 4-notch cost is extremely high and I don't find the benefits really worth it. Hopefully this change makes Soul Eater more efficient to use.***
 ## Dashmaster
-- Increase Mothwing Cloak dash speed by 10% (note that this also applies on Shadow Dash, this is how the original logic works)
-- Reduce Shadow Dash cooldown by 20%.
-- Remove synergy with Sharp Shadow.
-- Remove synergy with Sprintmaster.
+- Increases Mothwing Cloak dash speed by 10% (note that this also applies on Shadow Dash, this is how the original logic works)
+- Reduces Shadow Dash cooldown by 10%.
 
 ***Mothwing Cloak is overshadowed too much by Shade Cloak, I think this will make them get used more. Oh wait, this also buffs Shadow Dash. Is this too overpowered??? I don't know  ._.***
 ## Sprintmaster
 - Run speed increase: 20% => 25%.
 - Speed increase also APPLIES WHEN ON AIR.
-- Remove synergy with Dashmaster.
+- Synergies:
+  - Dashmaster:
+    - Run speed increase: 35%.
 
 ***I always feel so slow when jumping when using this charm. Now it's not anymore. This charm is already good so I have to remove the synergy with Dashmaster, otherwise it will be too overpowered.***
 ## Grubsong
 - Soul gain now SCALES with the amount of damage taken.
 - Soul gain when taking damage: 15 => 12.
-- Remove synergy with Grubberfly's Elegy.
+- Syneries:
+  - Grubberfly's Elegy:
+    - Soul gain: 25 => 20.
 
 ***Grubsong is a little too good for early game. So I think it is fine to nerf it a little bit. However, by scaling soul gain with damage, it remains viable in later stages, especially againsts bosses that deal more than 1 damage. I do think removing synergy is too harsh, but the charm is already too good. I also believe that a charm should only synergy with others if it does not work well with them.***
+## Grubberfly's Elegy
+- Grubberfly's Elegy now works properly in Patheons with Shell Binding
+- Grubberfly's Elegy no longer loses its effect when not at full masks.
+- Instead, the less white masks you are currently at, the lower the beam damage is.
+- The damage formula:    $Beam Damage = (\frac{currentMasks - 1}{maximumMasks + 1})^2 * nailDamage$
+- Doesn't fire beam when the damage is lower than 1.
+- Its behavior with Joni's Blessing is not changed.
+- 4 maximum masks
+
+| Health  | 4   |  3  |
+| ------- | ----|---- |
+| Damage  | 8   |  4  |
+
+- 9 maximum masks
+
+| Health  | 9   |  8  |  7  | 6   |  5 |  4 |
+| ------- |---- |---- |---- |---- |----|----|
+| Damage  | 14  | 11  |  8  |  6  |  4 |  2  |
+
+- 12 maximum masks
+
+| Health  | 12   |  11  |  10  | 9   |  8 |  7 |
+| ------- |----- | ---- |----- |---- |----|----|
+| Damage  | 16  | 13  |  11    |  8  |  7 |  5  |
+
+***I really like the idea of firing beam with your nail. But I just hate when it becomes completely useless when not at full masks. I think this change is nice since it still incentivizes players to keep their masks staying at high as possible while doesn't punish casual players too much.***
 ## Heart
-- Masks increase: 2 => 3
+- Masks increase: 34% of current maximum maks (round down)
+- Means that you will gain extra 3 masks when only have 9 maximum masks
 
 ***I do think this charm need a buff to keep up with other charms in the late game.***
 ## Greed
@@ -70,6 +99,7 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 ***This charm is really flexible when it can be use to both increase damage output and soul gain. It certainly needs a little nerf!***
 ## Thorns Of Agony
 - Thorn damage: 1x => 2x Nail damage
+- No longer inhibits movement when taken hit.
 - I have noticed that in best cases, the total damage could be up to 4x Nail damage.
 
 ***Cool charm but needs a little buff***
@@ -117,15 +147,19 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 ***A simple yet profound charm, it has so much potential. But I belive it should only cost 1 notch slot.***
 ## Sharp Shadow
 - Shadow Dash speed increase: 40% => 30%
-- Damage enemies for: 1x => 2x Nail damage
+- Shadow Dash damage: 1x => 1.5x Nail damage
 - Note that the increase on Mothwing Cloak dash also applies on Shadow Dash
-- Remove synergy with Dashmaster.
+- Synergies:
+  - Dashmaster:
+    - Shadow Dash damage: 2x Nail damage
 
 ***I do believe this charm is a little too overpowered. But I can't help but buffing it, everyone loves dashing, right...?***
 ## Weaversong
 - Each weaversling now deals: 1/3 Nail damage.
 - Each successful hit gain player 3 soul by default.
-- Remove synergy with Grubsong.
+- Synergies:
+  - Grubsong:
+    - Soul gain: 5
 
 ***I love summoner playstyle, but this charm is really ineffective. I believe the effect that gain player soul on hit would make this charm unique to other summon charms.***
 ## Dreamshield
