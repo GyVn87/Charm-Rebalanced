@@ -116,13 +116,21 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 ***I feel like this change would encourage a new playstyle without making it overpowered. With this, focusing in Radiant boss fights is no longer entirely useless.***
 ## Flukenest
 - Notch cost: 3 => 2
-- Multihits bug has been fixed in the lasted version of the game, but the current Modding API-supportable version haven't not. However, I fixed it somehow. 
+- Multihits bug has been fixed in the lasted version of the game, but the current Modding API-supportable version haven't yet. However, I fixed it somehow. 
 - Vengeful Spirit + Flukenest: 8 flukes x 5 damage (36 => 40)
 - Vengeful Spirit + Flukenest + Shaman Stone: 9 flukes x 6 damage (45 => 54)
 - Shade Soul + Flukenest: 16 flukes x 5 damage (64 => 80)
 - Shade Soul + Flukenest + Shaman Stone: 16 flukes x 7 damage (80 => 112)
 
 ***I love how this charm make spell so much stronger and fun to use since it basically makes Vengeful Spirit and Shade Soul a shotgun. I think it deserves more!***
+## Glowing Womb
+- Damage (both normal and Dung version): 1x Nail damage.
+- Only summons 2 Hatchlings after a successul focus.
+- Maximum Hatchlings: 6
+- Synergies:
+  - Deep Focus:
+    - Summons 4 Hatchlings after a successful focus.
+
 ## Deep Focus
 - Notch cost: 4 => 3.
 - Focus time increase: 65% => 50%.

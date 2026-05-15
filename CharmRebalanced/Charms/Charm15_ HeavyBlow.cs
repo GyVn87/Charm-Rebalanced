@@ -45,7 +45,7 @@ namespace TuyenTuyenTuyen.Charms {
                     if (Time.time < nextStunDamageTime)
                         return;
                     nextStunDamageTime = Time.time + eventDelay;
-                    FSMUtility.SendEventToGameObject(self.Target.Value, "STUN DAMAGE");
+                    self.Fsm.BroadcastEventToGameObject(self.Target.Value, "STUN DAMAGE", false);
                 }
             }
         }

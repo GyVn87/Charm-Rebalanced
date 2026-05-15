@@ -84,6 +84,7 @@
     <Compile Include="Charms\Charm20_SoulCatcher.cs" />
     <Compile Include="Charms\Charm21_SoulEater.cs" />
     <Compile Include="Charms\Charm03_GrubSong.cs" />
+    <Compile Include="Charms\Charm22_GlowingWomb.cs" />
     <Compile Include="Charms\Charm23_Heart.cs" />
     <Compile Include="Charms\Charm24_Greed.cs" />
     <Compile Include="Charms\Charm25_Strength.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Charms\Charm38_Dreamshield.cs" />
     <Compile Include="Charms\Charm39_Weaversong.cs" />
     <Compile Include="Charms\Charm40_Grimmchild.cs" />
+    <Compile Include="Charms\FocusMechanic.cs" />
     <Compile Include="Charms\NewCharmCosts.cs" />
     <Compile Include="GlobalUsings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Reflection;
 using TuyenTuyenTuyen.Charms;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace TuyenTuyenTuyen {
 
 		public override string GetVersion() => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-		public override void Initialize() {
+        public override void Initialize() {
 			if (CharmRebalanced.LoadedInstance != null) return;
 			CharmRebalanced.LoadedInstance = this;
 
@@ -29,6 +30,7 @@ namespace TuyenTuyenTuyen {
 			Charm19_ShamanStone.Load();
 			Charm20_SoulCatcher.Load();
 			Charm21_SoulEater.Load();
+			Charm22_GlowingWomb.Load();
 			Charm23_Heart.Load();  // has to be called before Joni's Blessing
 			Charm24_Greed.Load();
 			Charm25_Strength.Load();
@@ -42,6 +44,7 @@ namespace TuyenTuyenTuyen {
 			Charm39_Weaversong.Load(); 
 			Charm40_Grimmchild.Load();
 			NewCharmCosts.Load();
+			FocusMechanic.Load();
 		}
 
 		public void Unload() {
@@ -60,6 +63,7 @@ namespace TuyenTuyenTuyen {
 			Charm19_ShamanStone.Unload();
 			Charm20_SoulCatcher.Unload();
 			Charm21_SoulEater.Unload();
+			Charm22_GlowingWomb.Unload();
 			Charm23_Heart.Unload();
 			Charm24_Greed.Unload();
 			Charm25_Strength.Unload();
@@ -73,6 +77,7 @@ namespace TuyenTuyenTuyen {
 			Charm39_Weaversong.Unload();
 			Charm40_Grimmchild.Unload();
 			NewCharmCosts.Unload();
+			FocusMechanic.Unload();
 		}
 
 		private void RevertChanges() {

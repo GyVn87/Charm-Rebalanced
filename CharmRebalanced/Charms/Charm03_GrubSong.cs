@@ -4,13 +4,13 @@
         private static readonly int soulGainCombo = 20;
 
         internal static void Load() {
-            On.HeroController.Awake += Charm03_GrubSong.OnHCAwake;
-            ModHooks.TakeHealthHook += Charm03_GrubSong.OnTakeHealth;
+            On.HeroController.Awake += OnHCAwake;
+            ModHooks.TakeHealthHook += OnTakeHealth;
         }
 
         internal static void Unload() {
-            On.HeroController.Awake -= Charm03_GrubSong.OnHCAwake;
-            ModHooks.TakeHealthHook -= Charm03_GrubSong.OnTakeHealth;
+            On.HeroController.Awake -= OnHCAwake;
+            ModHooks.TakeHealthHook -= OnTakeHealth;
         }
 
         private static void OnHCAwake(On.HeroController.orig_Awake orig, HeroController self) {

@@ -45,7 +45,6 @@ namespace TuyenTuyenTuyen.Charms {
 
     internal class CheckOverlap : MonoBehaviour {
         private int delayedFrames = 5;
-
         private void LateUpdate() {
             if (delayedFrames > 0)
                 delayedFrames--;
