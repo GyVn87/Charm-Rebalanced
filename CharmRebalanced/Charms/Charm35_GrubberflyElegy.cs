@@ -47,7 +47,6 @@ namespace TuyenTuyenTuyen.Charms {
                         grubberFlyBeam.transform.SetScaleY(grubberFlyBeam.transform.localScale.y * MANTIS_CHARM_SCALE);
                     break;
             }
-            CharmRebalanced.LoadedInstance.Log(PD.beamDamage);
         }
 
         private static bool CanCastBeam() {

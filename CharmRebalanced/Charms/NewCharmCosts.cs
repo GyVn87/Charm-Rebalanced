@@ -5,6 +5,7 @@ namespace TuyenTuyenTuyen.Charms {
         private static readonly Dictionary<string, int> charmCosts = new Dictionary<string, int>() {
             {"charmCost_8", 1},
             {"charmCost_11", 2},
+            {"charmCost_15", 3},
             {"charmCost_21", 3},
             {"charmCost_27", 2},
             {"charmCost_28", 1},

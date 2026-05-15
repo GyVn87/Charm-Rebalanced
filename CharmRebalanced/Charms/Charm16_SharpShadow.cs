@@ -32,8 +32,10 @@ namespace TuyenTuyenTuyen.Charms {
         }
 
         private static void OnConvertFloatToInt_OnEnter(On.HutongGames.PlayMaker.Actions.ConvertFloatToInt.orig_OnEnter orig, HutongGames.PlayMaker.Actions.ConvertFloatToInt self) {
-            if (self.Fsm.Name == "Set Sharp Shadow Damage" && self.State.Name == "Set") 
-                self.floatVariable.Value *= shadowDashDamageSharp;
+            if (self.Fsm.Name == "Set Sharp Shadow Damage" && self.State.Name == "Set") {
+                if (!CharmRebalanced.LoadedInstance.PD.GetBool("equippedCharm_31"))
+                    self.floatVariable.Value *= shadowDashDamageSharp;
+            }
             orig(self);
         }
     }

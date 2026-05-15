@@ -90,9 +90,15 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 ***The original increase is almost insignificant which many players didn't bother using it. The use in Colosseum Of Fools is really interesting to me. It encourages high risk, high return playstyle when you have to sacrifice 2 notch slots.***
 ## Strength
 - Damage increase: 50% => 35%.
-- Damage increases also applies on Nail Art.
 
 ***This charm certainly needs a nerf, 50% increases in damage is purely evil. Moreover, is it weird when the charm only applies on Nail, don't you think?***
+## Heavy Blow
+- Notch cost: 2 => 3
+- Increases Nail Art damage by: 30%
+- Remove increased knockback
+- Hits from Great Slash and Dash Slash now count as 2 hit to stagger a boss
+
+***Why increase the knockback when you need to hit the enemies as many as possible. I believe this charm needs some reworks.***
 ## Quickslash
 - Attack speed increase: 46% => 33%
 

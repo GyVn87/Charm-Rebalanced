@@ -24,6 +24,7 @@ namespace TuyenTuyenTuyen {
 			Charm09_LifebloodCore.Load();
 			Charm11_Flukenest.Load();
 			Charm12_ThornsOfAgony.Load();
+			Charm15__HeavyBlow.Load();
 			Charm16_SharpShadow.Load();
 			Charm19_ShamanStone.Load();
 			Charm20_SoulCatcher.Load();
@@ -54,6 +55,7 @@ namespace TuyenTuyenTuyen {
 			Charm09_LifebloodCore.Unload();
 			Charm11_Flukenest.Unload();
 			Charm12_ThornsOfAgony.Unload();
+			Charm15__HeavyBlow.Unload();
 			Charm16_SharpShadow.Unload();
 			Charm19_ShamanStone.Unload();
 			Charm20_SoulCatcher.Unload();
