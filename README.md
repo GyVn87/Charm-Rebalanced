@@ -189,7 +189,7 @@ A mod that balances and reworks almost all charms of Hollow Knight!
 ***As I said before, I love summoner playstyle. Despite this charm's unlimited power, I still buffed it to make it even stronger.***
 ## Carefree Melody
 - No longer relies on luck to block attacks.
-- Cooldown: 10 seconds
+- Cooldown: 15 seconds
 - Upon activated, decreases player's health to a single mask.
 - Taking damage while the charm is on cooldown results in an instant death.
 

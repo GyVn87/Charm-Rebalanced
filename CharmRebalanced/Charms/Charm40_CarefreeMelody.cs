@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm40_CarefreeMelody {
-        private static readonly float hitBlockCooldown = 10f;
+        private static readonly float hitBlockCooldown = 15f;
 
         private static float timer = 0f;
 
@@ -63,15 +63,14 @@ namespace TuyenTuyenTuyen.Charms {
             )) {
                 cursor.EmitDelegate<Func<bool>>(NewCarefreeMelodyMechanic);
                 cursor.Emit(OpCodes.Brtrue, blockEffectLabel);
-                cursor.Emit(OpCodes.Ldc_I4, 9999);
-                cursor.Emit(OpCodes.Starg_S, (byte)3);
 
                 ILLabel label = null;
-                ILCursor cloneCursor = cursor.Clone();
-                if (cloneCursor.TryGotoNext(
-                    MoveType.Before,
+                if (cursor.TryGotoNext(
+                    MoveType.After,
                     i => i.MatchBrfalse(out label)
                 )) {
+                    cursor.Emit(OpCodes.Ldc_I4, 9999);
+                    cursor.Emit(OpCodes.Starg_S, (byte)3);
                     cursor.Emit(OpCodes.Br, label);
                 }
             }
