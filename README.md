@@ -1,16 +1,14 @@
-A mod that balances charms! 
-It is worth noting that I'm terrible at balancing, so please help me by giving your thoughts and ideas!
+A mod that balances and reworks almost all charms of Hollow Knight! 
 
 # How to install
 * Change the game version to `1.5.78.11833`
 ![How to change the game version](https://media.discordapp.net/attachments/1207486627124093019/1469343521260703867/steambetas2.jpg?ex=69fd4e8a&is=69fbfd0a&hm=753c394259c15c2b3de099d0fec43cc28aebf208aa3326eb36aacb98cdd1bdb0&format=webp&width=2682&height=1546&)
-* Locate the `Game Files` folder, you can follow this guide: https://www.reddit.com/r/HollowKnight/comments/1d11mq9/comment/l5qsdds/
-* Download and extract the lastest release of Modding API: https://github.com/hk-modding/api/releases
-* From `Game Files` folder, move all the files from Modding API folder, to `hollow_knight_Data\Managed`, allow replacing some the files.
-* Download and extract the lastest release of the mod.
-* From `Game Files` folder, move the mod folder to `hollow_knight_Data\Managed\Mods` (if you don't have the `Mods` folder, create it).
-* Launch the game and ENJOY ツ (you can disable the mod in `Main Menu/Options/Mods`).
-* If you want to revert back to vanilla, you just need to go to `Steam Library/Hollow Knight/Properties/Installed Files` and choose `Verify integrity of game files`.
+* Download and install Lumafly, you can get it from here: https://themulhima.github.io/Lumafly/
+* Launch `Lumafly`, choose `Mods`, search `Charm Rebalanced`, and install the mod
+<img width="1919" height="259" alt="image" src="https://github.com/user-attachments/assets/3d3d6d78-71af-4336-9981-87b2854eb6aa" />
+
+* At `Info`, choose `Launch Modded Game`, and done
+* Next times, you only need to launch the game as usual.
 
 # Changes
 ## Vengeful Spirit & Shade Soul
