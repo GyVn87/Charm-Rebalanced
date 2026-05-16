@@ -23,6 +23,7 @@ namespace TuyenTuyenTuyen {
 			Charm03_GrubSong.Load();
 			Charm05_BaldurShell.Load();
 			Charm09_LifebloodCore.Load();
+			Charm10_DefenderCrest.Load();
 			Charm11_Flukenest.Load();
 			Charm12_ThornsOfAgony.Load();
 			Charm15__HeavyBlow.Load();
@@ -57,6 +58,7 @@ namespace TuyenTuyenTuyen {
 			Charm03_GrubSong.Unload();
 			Charm05_BaldurShell.Unload();
 			Charm09_LifebloodCore.Unload();
+			Charm10_DefenderCrest.Unload();
 			Charm11_Flukenest.Unload();
 			Charm12_ThornsOfAgony.Unload();
 			Charm15__HeavyBlow.Unload();

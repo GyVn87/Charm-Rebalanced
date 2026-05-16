@@ -78,12 +78,17 @@
       <HintPath>$(ManagedFolder)\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharmRebalanced.cs" />
     <Compile Include="Charms\Charm05_BaldurShell.cs" />
     <Compile Include="Charms\Charm06_FuryOfTheFallen.cs" />
     <Compile Include="Charms\Charm09_LifebloodCore.cs" />
+    <Compile Include="Charms\Charm10_DefenderCrest.cs" />
     <Compile Include="Charms\Charm11_Flukenest.cs" />
     <Compile Include="Charms\Charm12_ThornsOfAgony.cs" />
     <Compile Include="Charms\Charm15_ HeavyBlow.cs" />

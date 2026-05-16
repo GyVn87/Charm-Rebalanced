@@ -121,6 +121,12 @@ A mod that balances and reworks almost all charms of Hollow Knight!
 - Shade Soul + Flukenest + Shaman Stone: 16 flukes x 7 damage (80 => 112)
 
 ***I love how this charm make spell so much stronger and fun to use since it basically makes Vengeful Spirit and Shade Soul a shotgun. I think it deserves more!***
+## Defender's Crest
+- Cloud is larger by: 20%.
+- Cloud lasts: 1.1 seconds => 2 seconds.
+- Enemies in cloud suffer 10% more damage from all sources.
+
+***This charm is far weaker than other 1-notch charms like Grubsong, Nailmaster's Glory, and its synergies are terrible as well.***
 ## Glowing Womb
 - Damage (both normal and Dung version): 1x Nail damage.
 - Only summons 2 Hatchlings after a successul focus.
@@ -129,6 +135,7 @@ A mod that balances and reworks almost all charms of Hollow Knight!
   - Deep Focus:
     - Summons 4 Hatchlings after a successful focus.
 
+***This change makes the charm more interactive and fun to use now, while still retaining its original concept of using Soul to summon minions***
 ## Deep Focus
 - Notch cost: 4 => 3.
 - Focus time increase: 65% => 50%.
