@@ -189,3 +189,10 @@ It is worth noting that I'm terrible at balancing, so please help me by giving y
 - Grimmchild can now shoots more ***ACCURATELY***.
 
 ***As I said before, I love summoner playstyle. Despite this charm's unlimited power, I still buffed it to make it even stronger.***
+## Carefree Melody
+- No longer relies on luck to block attacks.
+- Cooldown: 10 seconds
+- Upon activated, decreases player's health to a single mask.
+- Taking damage while the charm is on cooldown results in an instant death.
+
+***To put it simple, I hate RNG-based mechanics***

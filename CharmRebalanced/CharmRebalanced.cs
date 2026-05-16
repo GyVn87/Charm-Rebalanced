@@ -43,6 +43,7 @@ namespace TuyenTuyenTuyen {
 			Charm38_Dreamshield.Load();
 			Charm39_Weaversong.Load(); 
 			Charm40_Grimmchild.Load();
+			Charm40_CarefreeMelody.Load();
 			NewCharmCosts.Load();
 			FocusMechanic.Load();
 		}
@@ -76,6 +77,7 @@ namespace TuyenTuyenTuyen {
 			Charm38_Dreamshield.Unload();
 			Charm39_Weaversong.Unload();
 			Charm40_Grimmchild.Unload();
+			Charm40_CarefreeMelody.Unload();
 			NewCharmCosts.Unload();
 			FocusMechanic.Unload();
 		}

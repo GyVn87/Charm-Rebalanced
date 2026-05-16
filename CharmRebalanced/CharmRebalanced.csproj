@@ -50,6 +50,14 @@
       <HintPath>$(ManagedFolder)\MMHOOK_PlayMaker.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\MonoMod.Utils.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="PlayMaker">
       <HintPath>$(ManagedFolder)\PlayMaker.dll</HintPath>
       <Private>False</Private>
@@ -97,6 +105,7 @@
     <Compile Include="Charms\Charm37_Sprintmaster.cs" />
     <Compile Include="Charms\Charm38_Dreamshield.cs" />
     <Compile Include="Charms\Charm39_Weaversong.cs" />
+    <Compile Include="Charms\Charm40_CarefreeMelody.cs" />
     <Compile Include="Charms\Charm40_Grimmchild.cs" />
     <Compile Include="Charms\FocusMechanic.cs" />
     <Compile Include="Charms\NewCharmCosts.cs" />
