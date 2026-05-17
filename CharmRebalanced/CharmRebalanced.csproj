@@ -51,11 +51,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mono.Cecil.dll</HintPath>
+      <HintPath>$(ManagedFolder)\Mono.Cecil.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MonoMod.Utils">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\MonoMod.Utils.dll</HintPath>
+      <HintPath>$(ManagedFolder)\MonoMod.Utils.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PlayMaker">
@@ -78,8 +78,12 @@
       <HintPath>$(ManagedFolder)\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(ManagedFolder)\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>$(ManagedFolder)\UnityEngine.Physics2DModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -93,6 +97,7 @@
     <Compile Include="Charms\Charm12_ThornsOfAgony.cs" />
     <Compile Include="Charms\Charm15_ HeavyBlow.cs" />
     <Compile Include="Charms\Charm16_SharpShadow.cs" />
+    <Compile Include="Charms\Charm17_SporeShroom.cs" />
     <Compile Include="Charms\Charm19_ShamanStone.cs" />
     <Compile Include="Charms\Charm20_SoulCatcher.cs" />
     <Compile Include="Charms\Charm21_SoulEater.cs" />
@@ -112,9 +117,10 @@
     <Compile Include="Charms\Charm39_Weaversong.cs" />
     <Compile Include="Charms\Charm40_CarefreeMelody.cs" />
     <Compile Include="Charms\Charm40_Grimmchild.cs" />
-    <Compile Include="Charms\FocusMechanic.cs" />
     <Compile Include="Charms\NewCharmCosts.cs" />
     <Compile Include="GlobalUsings.cs" />
+    <Compile Include="Mechanics\ExtraDamage.cs" />
+    <Compile Include="Mechanics\Focus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

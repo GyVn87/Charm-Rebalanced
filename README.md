@@ -92,9 +92,9 @@ A mod that balances and reworks almost all charms of Hollow Knight!
 ***This charm certainly needs a nerf, 50% increases in damage is purely evil. Moreover, is it weird when the charm only applies on Nail, don't you think?***
 ## Heavy Blow
 - Notch cost: 2 => 3
-- Increases Nail Art damage by: 30%
+- Increases Nail Art damage by: 20%
 - Remove increased knockback
-- Hits from Great Slash and Dash Slash now count as 2 hit to stagger a boss
+- Hits from Great Slash and Dash Slash now count as 3 hits to stagger a boss
 
 ***Why increase the knockback when you need to hit the enemies as many as possible. I believe this charm needs some reworks.***
 ## Quickslash
@@ -119,12 +119,18 @@ A mod that balances and reworks almost all charms of Hollow Knight!
 - Vengeful Spirit + Flukenest + Shaman Stone: 9 flukes x 6 damage (45 => 54)
 - Shade Soul + Flukenest: 16 flukes x 5 damage (64 => 80)
 - Shade Soul + Flukenest + Shaman Stone: 16 flukes x 7 damage (80 => 112)
+- Synergies:
+  - Defender's Crest:
+    - Vengeful Spirit: 50 (2.2 seconds)
+    - Shade Soul: 100 (2.2 seconds)
+    - Affected by Shaman Stone
 
 ***I love how this charm make spell so much stronger and fun to use since it basically makes Vengeful Spirit and Shade Soul a shotgun. I think it deserves more!***
 ## Defender's Crest
 - Cloud is larger by: 20%.
-- Cloud lasts: 1.1 seconds => 2 seconds.
-- Enemies in cloud suffer 10% more damage from all sources.
+- Enemies in cloud suffer 10% more damage from all sources (except cloud, spore damage).
+- Debuff lasts: 2 seconds
+- Enemies with debuff will have dark purple particles around them
 
 ***This charm is far weaker than other 1-notch charms like Grubsong, Nailmaster's Glory, and its synergies are terrible as well.***
 ## Glowing Womb
@@ -160,10 +166,13 @@ A mod that balances and reworks almost all charms of Hollow Knight!
 - Its behavior with Joni's Blessing is not changed.
 
 ***I always hear everyone complains that this charm is not worth using it. Buffing it may be a good idea, but I feel like it is too overpowered?***
-## Shade Of Unn
-- Notch cost: 2 => 1
+## Spore Shroom
+- Spore damage: 3x Nail Damage
+- Synergies:
+  - Defender's Crest:
+    - Cloud still deals the same damage as that of spore, but inflicts weakness debuff
 
-***A simple yet profound charm, it has so much potential. But I belive it should only cost 1 notch slot.***
+***This changes makes Spore Shroom literally a spell now***
 ## Sharp Shadow
 - Shadow Dash speed increase: 40% => 30%
 - Shadow Dash damage: 1x => 1.5x Nail damage
@@ -173,6 +182,10 @@ A mod that balances and reworks almost all charms of Hollow Knight!
     - Shadow Dash damage: 2x Nail damage
 
 ***I do believe this charm is a little too overpowered. But I can't help but buffing it, everyone loves dashing, right...?***
+## Shade Of Unn
+- Notch cost: 2 => 1
+
+***A simple yet profound charm, it has so much potential. But I belive it should only cost 1 notch slot.***
 ## Weaversong
 - Each weaversling now deals: 1/3 Nail damage.
 - Each successful hit gain player 3 soul by default.

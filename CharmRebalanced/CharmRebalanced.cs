@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Reflection;
 using TuyenTuyenTuyen.Charms;
+using TuyenTuyenTuyen.Mechanics;
 using UnityEngine;
 
 namespace TuyenTuyenTuyen {
@@ -28,6 +28,7 @@ namespace TuyenTuyenTuyen {
 			Charm12_ThornsOfAgony.Load();
 			Charm15__HeavyBlow.Load();
 			Charm16_SharpShadow.Load();
+			Charm17_SporeShroom.Load();
 			Charm19_ShamanStone.Load();
 			Charm20_SoulCatcher.Load();
 			Charm21_SoulEater.Load();
@@ -46,7 +47,8 @@ namespace TuyenTuyenTuyen {
 			Charm40_Grimmchild.Load();
 			Charm40_CarefreeMelody.Load();
 			NewCharmCosts.Load();
-			FocusMechanic.Load();
+			Focus.Load();
+			ExtraDamage.Load();
 		}
 
 		public void Unload() {
@@ -63,6 +65,7 @@ namespace TuyenTuyenTuyen {
 			Charm12_ThornsOfAgony.Unload();
 			Charm15__HeavyBlow.Unload();
 			Charm16_SharpShadow.Unload();
+			Charm17_SporeShroom.Unload();
 			Charm19_ShamanStone.Unload();
 			Charm20_SoulCatcher.Unload();
 			Charm21_SoulEater.Unload();
@@ -81,7 +84,8 @@ namespace TuyenTuyenTuyen {
 			Charm40_Grimmchild.Unload();
 			Charm40_CarefreeMelody.Unload();
 			NewCharmCosts.Unload();
-			FocusMechanic.Unload();
+			Focus.Unload();
+			ExtraDamage.Unload();
 		}
 
 		private void RevertChanges() {

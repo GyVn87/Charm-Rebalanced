@@ -2,7 +2,8 @@
 
 namespace TuyenTuyenTuyen.Charms {
     internal static class Charm15__HeavyBlow {
-        private static readonly float damageMultiplier = 1.3f;
+        private static readonly float damageMultiplier = 1.2f;
+        private static readonly int stunHit = 3;
 
         private static PlayerData PD => CharmRebalanced.LoadedInstance.PD;
         private static float nextStunDamageTime = 0f;
@@ -45,7 +46,8 @@ namespace TuyenTuyenTuyen.Charms {
                     if (Time.time < nextStunDamageTime)
                         return;
                     nextStunDamageTime = Time.time + eventDelay;
-                    self.Fsm.BroadcastEventToGameObject(self.Target.Value, "STUN DAMAGE", false);
+                    for (int i = 1; i <= (stunHit - 1); i++)
+                        self.Fsm.BroadcastEventToGameObject(self.Target.Value, "STUN DAMAGE", false);
                 }
             }
         }
