@@ -1,4 +1,5 @@
 A mod that balances and reworks almost all charms of Hollow Knight! 
+If you enjoy the mod, please consider giving the repository a star, this will help more people discover the mod!
 
 # How to install
 * Change the game version to `1.5.78.11833`
